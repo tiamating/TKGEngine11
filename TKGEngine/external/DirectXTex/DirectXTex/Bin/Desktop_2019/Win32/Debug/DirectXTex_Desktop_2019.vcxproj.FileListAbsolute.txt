@@ -1,0 +1,2 @@
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\Bin\Desktop_2019\Win32\Debug\DirectXTex.lib
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\Bin\Desktop_2019\Win32\Debug\DirectXTex.pdb

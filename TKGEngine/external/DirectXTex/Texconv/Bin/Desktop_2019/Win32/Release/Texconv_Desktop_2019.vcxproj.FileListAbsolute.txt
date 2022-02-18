@@ -1,0 +1,1 @@
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\Texconv\Bin\Desktop_2019\Win32\Release\texconv.exe

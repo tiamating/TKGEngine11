@@ -1,0 +1,2 @@
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\Texdiag\Bin\Desktop_2019\Win32\Debug\texdiag.exe
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\Texdiag\Bin\Desktop_2019\Win32\Debug\texdiag.pdb

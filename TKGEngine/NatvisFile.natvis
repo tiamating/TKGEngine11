@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="TKGEngine::VECTOR2">
+		<DisplayString>{{x={x} y={y}}}</DisplayString>
+	</Type>
+	<Type Name="TKGEngine::VECTOR3">
+		<DisplayString>{{x={x} y={y} z={z}}</DisplayString>
+	</Type>
+	<Type Name="TKGEngine::VECTOR4">
+		<DisplayString>{{x={x} y={y} z={z} w={w}}</DisplayString>
+	</Type>
+	<Type Name="TKGEngine::Quaternion">
+		<DisplayString>{{x={x} y={y} z={z} w={w}}</DisplayString>
+	</Type>
+</AutoVisualizer>

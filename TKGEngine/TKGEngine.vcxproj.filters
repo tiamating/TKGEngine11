@@ -1,0 +1,1011 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ImGUI">
+      <UniqueIdentifier>{62d21e9d-3411-4004-b803-9cbffc4d7856}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Shader\BasicVS.hlsl" />
+    <FxCompile Include="Shader\BasicPS.hlsl" />
+    <FxCompile Include="Shader\DebugGrid_VS.hlsl" />
+    <FxCompile Include="Shader\DebugGrid_PS.hlsl" />
+    <FxCompile Include="Shader\AlphaTest_PS.hlsl" />
+    <FxCompile Include="Shader\TestLate_PS.hlsl" />
+    <FxCompile Include="Shader\BasicUI_VS.hlsl" />
+    <FxCompile Include="Shader\BasicUI_PS.hlsl" />
+    <FxCompile Include="Shader\BasicSprite_VS.hlsl" />
+    <FxCompile Include="Shader\BasicSprite_PS.hlsl" />
+    <FxCompile Include="Shader\BulletDebug_VS.hlsl" />
+    <FxCompile Include="Shader\BulletDebug_PS.hlsl" />
+    <FxCompile Include="Shader\Skinning\Skinning_CS.hlsl" />
+    <FxCompile Include="Shader\FullscreenQuad\FullscreenQuad_VS.hlsl" />
+    <FxCompile Include="Shader\FullscreenQuad\FullscreenQuad_PS.hlsl" />
+    <FxCompile Include="Shader\SkyBox\SkyBox_PS.hlsl" />
+    <FxCompile Include="Shader\SkyBox\SkyBox_VS.hlsl" />
+    <FxCompile Include="Shader\Stage\ActionArea_PS.hlsl" />
+    <FxCompile Include="Shader\Stage\ActionArea_VS.hlsl" />
+    <FxCompile Include="Shader\PBR\BasicPBR_VS.hlsl" />
+    <FxCompile Include="Shader\PBR\PBR_N_R_PS.hlsl" />
+    <FxCompile Include="Shader\PBR\PBR_N_PS.hlsl" />
+    <FxCompile Include="Shader\PBR\PBR_N_R_M_PS.hlsl" />
+    <FxCompile Include="Shader\Stage\WireFence_Depth_PS.hlsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Lib\Utility\inc\myfunc_string.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_easing.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_math.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\ITarget.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_IDevice.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_Device.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_IQueue.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_Queue.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_ICommandList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_CommandList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_IQuery.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Texture_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\ResourceManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Texture.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui_impl_dx11.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui_impl_win32.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui_internal.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_rectpack.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_textedit.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imstb_truetype.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imconfig.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui.h">
+      <Filter>ImGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Asset_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\AssetDataBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Shader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\VertexElement.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Texture\IResTexture.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Shader\IResShader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Mesh\IResMesh.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\ConstantBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\VertexBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\IndexBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_file.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GraphicsSystem\Graphics_IProfiler.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\bounds.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Buffer_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\inc\Object.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Mesh.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\FBXLoader.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\template_property.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\ObjectManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\inc\IGameObject.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\GameObjectManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Component.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\ComponentManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\inc\ProjectSetting.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CTransform.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\MonoBehaviourManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CBehaviour.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CMonoBehaviour.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Shader_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Material.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Material\IResMaterial.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_vector.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CCamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CLight.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\CameraManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\LightManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Motion\IResMotion.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Motion.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CMeshRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Material_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\inc\AudioResourceList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\random.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Avatar.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Avatar\IResAvatar.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\RendererManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\interface\ICamera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\Frustum.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\interface\IRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_imgui.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\editor\Debug_Camera.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Scene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\Scene\IResScene.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\SceneManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\inc\SystemSetting.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\StructuredBuffer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Environment.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CAnimator.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CSkinnedMeshRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Managers\AnimatorManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGuizmo\ImCurveEdit.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGuizmo\ImGradient.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGuizmo\ImGuizmo.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGuizmo\ImSequencer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\ImGuizmo\ImZoomSlider.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Avatar_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Application.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\AssetSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\AsyncFence.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\EventArgsList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IApp.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IAudio.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IAudioSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IGraphics.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IGraphicsSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IGUI.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IGUISystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IInput.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IInputSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Input_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\ISceneSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\ISystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\ITime.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\ITimeSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IWindow.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\IWindowSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\LogSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\StateManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\TKGEngine_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animation_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\interface\IAnimator.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\IResAnimatorController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\AnimatorController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\Effect.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CParticleSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Graphics_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\inc\StencilMaskList.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\DirectXMath\Inc\DirectXCollision.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\inc\ObjectTransform.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CUIRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CSpriteRenderer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\SystemFunction.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\PhysicsSystem.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Physics_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\PhysicsSystem\IBulletDebugDraw.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\src\GUISystem\GUI_Gizmo.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CCollider.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CRigidBody.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Physics_Shape.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\inc\CTriggerBody.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\interface\ICollider.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\Physics_Raycast.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\Physics_KinematicCharacter.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_ControllerLayer.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_AvatarMask.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_State.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_StateMachine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_BlockBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_BlendTree.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_Transition.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_Clip.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Resource\src\AnimatorController\Animator_Event.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader\Skinning\Skinning_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Systems\inc\SystemAccessor.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\template_thread.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\pch.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Shadow\ShadowMapBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\imgui\imgui_stdlib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Shadow\LightShadowBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\inc\Light_Defined.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Shadow\PSSM\PSSM.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Shadow\DirectionalLight\DirectionalLightShadow.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\myfunc_collision.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="external\nameof\nameof.hpp">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Utility\inc\template_SWPtr.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterGroundChecker.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterHealthController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterMoveController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterWeaponController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterStateMachine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerActionState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerClimbOverSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerCoverSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerExploreSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerSlideSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerStateMachine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Camera\CameraController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerController.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Player\StickInputData.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Scene\InitSceneManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Stage\GameStageManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Weapon\HandGun.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Weapon\IWeaponBase.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Stage\GoalManager.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Lib\Application\Resource\src\Target.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\VertexBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\ConstantBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\GraphicsSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\Graphics_Device.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GUISystem\GUISystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\WindowSystem\WindowSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\IApp.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\Application.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\myfunc_string.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\TimeSystem\TimeSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\Graphics_Queue.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\Graphics_CommandList.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\Graphics_Query.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\LogSystem\LogSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_demo.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_draw.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_impl_dx11.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_impl_win32.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_widgets.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui.cpp">
+      <Filter>ImGUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\AssetSystem\AssetSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Texture\ResTexture.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Texture\Texture.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Shader\Shader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Shader\ResShader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Mesh\ResMesh.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\IndexBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\myfunc_file.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\Graphics_Profiler.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\src\Object.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\AssetSystem\AsyncFence.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Mesh\Mesh.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\FBXLoader.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\ObjectManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\src\GameObject.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\GameObjectManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Component.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\ComponentManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CTransform.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\MonoBehaviourManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CBehaviour.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CMonoBehaviour.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Material\Material.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Material\ResMaterial.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\myfunc_vector.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GraphicsSystem\StateManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CCamera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CLight.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\CameraManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\LightManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Motion\Motion.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Motion\ResMotion.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CMeshRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\random.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Avatar\Avatar.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Avatar\ResAvatar.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\RendererManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\SceneSystem\SceneSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\InputSystem\InputSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\myfunc_imgui.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\editor\Debug_Camera.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\AudioSystem\AudioSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Scene\Scene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Scene\ResScene.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\SceneManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\StructuredBuffer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Environment.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CAnimator.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CSkinnedMeshRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Managers\AnimatorManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ImGuizmo\ImCurveEdit.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ImGuizmo\ImGradient.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ImGuizmo\ImGuizmo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\ImGuizmo\ImSequencer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\AnimatorController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\ResAnimatorController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\Effect.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CParticleSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\ObjectTransform.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CUIRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CSpriteRenderer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\PhysicsSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_tables.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\IBulletDebugDraw.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\GUISystem\GUI_Gizmo.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CCollider.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CRigidBody.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_Shape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\src\CTriggerBody.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_BoxShape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_SphereShape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_CapsuleShape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_CylinderShape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_ConeShape.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\Physics_Raycast.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Systems\src\PhysicsSystem\Physics_KinematicCharacter.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_ControllerLayer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_AvatarMask.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_State.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_StateMachine.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_BlockBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_BlendTree.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_Transition.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_Clip.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Resource\src\AnimatorController\Animator_Event.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\pch.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Shadow\ShadowMapBase.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="external\imgui\imgui_stdlib.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Shadow\PSSM\PSSM.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Shadow\DirectionalLight\DirectionalLightShadow.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Utility\src\myfunc_collision.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterGroundChecker.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterHealthController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterMoveController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterWeaponController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerActionState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerClimbOverSubState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerCoverSubState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerExploreSubState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerSlideSubState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerStateMachine.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Camera\CameraController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerController.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Scene\InitSceneManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Stage\GameStageManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Weapon\HandGun.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Stage\GoalManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\BasicHeader.hlsli" />
+    <None Include="Lib\Utility\src\bounds.inl">
+      <Filter>ヘッダー ファイル</Filter>
+    </None>
+    <None Include="cpp.hint" />
+    <None Include="Lib\Utility\src\myfunc_vector.inl">
+      <Filter>ヘッダー ファイル</Filter>
+    </None>
+    <None Include="Lib\Utility\src\Frustum.inl">
+      <Filter>ヘッダー ファイル</Filter>
+    </None>
+    <None Include="Shader\DebugGrid.hlsli" />
+    <None Include="Shader\ConstantBuffer_Defined.hlsli" />
+    <None Include="Shader\Register_Defined.hlsli" />
+    <None Include="Shader\Utility_Math.hlsli" />
+    <None Include="Shader\Utility_Func.hlsli" />
+    <None Include="external\DirectXMath\Inc\DirectXCollision.inl">
+      <Filter>ヘッダー ファイル</Filter>
+    </None>
+    <None Include="Shader\BasicUI.hlsli" />
+    <None Include="Shader\BasicSprite.hlsli" />
+    <None Include="Shader\BulletDebug.hlsli" />
+    <None Include="Shader\Light.hlsli" />
+    <None Include="Shader\ReflectionModel.hlsli" />
+    <None Include="Shader\Shader_Include.hlsli" />
+    <None Include="Shader\FullscreenQuad\FullscreenQuad.hlsli" />
+    <None Include="Shader\SkyBox\SkyBox.hlsli" />
+    <None Include="Shader\Shadow.hlsli" />
+    <None Include="Shader\PBR\CookTorrance.hlsli" />
+    <None Include="Shader\PBR\PBRLight.hlsli" />
+    <None Include="Shader\Stage\ActionArea.hlsli" />
+    <None Include="Shader\PBR\BasicPBR.hlsli" />
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="NatvisFile.natvis" />
+  </ItemGroup>
+</Project>

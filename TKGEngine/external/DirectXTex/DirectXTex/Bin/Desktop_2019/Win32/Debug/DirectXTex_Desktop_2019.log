@@ -1,0 +1,62 @@
+﻿  DirectXTexUtil.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4169,17): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4199,18): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4234,18): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4235,19): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4263,18): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\um\d3d11.h(4264,19): warning C5219: 'UINT' から 'FLOAT' への暗黙的な変換です。データが失われる可能性があります
+  BC.cpp
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(433,80): warning C5219: 'int32_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(434,80): warning C5219: 'int32_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(435,80): warning C5219: 'int32_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(921,45): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(921,64): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(926,45): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(926,64): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(972,57): warning C5219: 'int32_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(1065,43): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(1065,61): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(1081,43): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC.cpp(1081,61): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+  BC4BC5.cpp
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(50,24): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(52,24): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(53,28): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(54,28): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(58,37): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(58,58): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(67,37): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(67,58): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(109,24): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(111,24): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(112,28): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(113,28): warning C5219: 'int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(117,37): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(117,58): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(126,37): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\BC4BC5.cpp(126,58): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+  BC6HBC7.cpp
+  BCDirectCompute.cpp
+  DirectXTexCompress.cpp
+  DirectXTexCompressGPU.cpp
+  DirectXTexConvert.cpp
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexConvert.cpp(1300,27): warning C5219: 'unsigned int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexConvert.cpp(1336,27): warning C5219: 'unsigned int' から 'float' への暗黙的な変換です。データが失われる可能性があります
+  DirectXTexD3D11.cpp
+  DirectXTexDDS.cpp
+  DirectXTexFlipRotate.cpp
+  DirectXTexHDR.cpp
+  DirectXTexImage.cpp
+  DirectXTexMipMaps.cpp
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexMipMaps.cpp(194,31): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexMipMaps.cpp(194,44): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexMipMaps.cpp(199,35): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\DirectXTexMipMaps.cpp(199,48): warning C5219: 'size_t' から 'float' への暗黙的な変換です。データが失われる可能性があります
+  DirectXTexMisc.cpp
+  DirectXTexNormalMaps.cpp
+  DirectXTexPMAlpha.cpp
+  DirectXTexResize.cpp
+  DirectXTexTGA.cpp
+  DirectXTexWIC.cpp
+  コードを生成中...
+  DirectXTex_Desktop_2019.vcxproj -> C:\study\TKGEngine\TKGEngine\external\DirectXTex\DirectXTex\Bin\Desktop_2019\Win32\Debug\DirectXTex.lib
