@@ -56,7 +56,7 @@ TKGEngine/x64/
 TKGEngine/.vs/
 TKGEngine/external/FBXSDK/lib/vs2017/x86/debug/
 TKGEngine/external/FBXSDK/lib/vs2017/x86/release/
-*.ini
+# *.ini
 *.meshJ
 *.avatarJ
 *.motionJ
