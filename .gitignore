@@ -45,7 +45,8 @@
 *.psd
 *.bmp
 *.BMP
-#*.fbx
+*.fbx
+*.FBX
 *.kra
 *.kra~
 *.png~
