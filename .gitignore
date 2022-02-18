@@ -1,0 +1,69 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+#*.obj
+*.cso
+*.cod
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+# Executables
+*.exe
+*.out
+*.app
+
+# Custum
+*.cso
+*.cod
+*.msh
+*.wmv
+*.mov
+*.dds
+*.wav
+*.tga
+*.TGA
+*.psd
+*.bmp
+*.BMP
+#*.fbx
+*.kra
+*.kra~
+*.png~
+TKGEngine/Debug/
+TKGEngine/Release/
+TKGEngine/x64/
+TKGEngine/.vs/
+TKGEngine/external/FBXSDK/lib/vs2017/x86/debug/
+TKGEngine/external/FBXSDK/lib/vs2017/x86/release/
+*.ini
+*.meshJ
+*.avatarJ
+*.motionJ
+*.materialJ
+*.objtrJ
+*.objectJ
+*.controllerJ
+*.sceneJ
+*.systemJ
+*.DotSettings
+*.DotSettings.user
