@@ -287,6 +287,12 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
+    <FxCompile Include="Shader\PBR\PBR_N_M_PS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
     <FxCompile Include="Shader\PBR\PBR_N_PS.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
@@ -360,6 +366,11 @@
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterHealthController.cpp" />
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterMoveController.cpp" />
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\CharacterWeaponController.cpp" />
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyActionState.cpp" />
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyDeathSubState.cpp" />
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyReactionState.cpp" />
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemySearchSubState.cpp" />
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyStateMachine.cpp" />
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerActionState.cpp" />
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerClimbOverSubState.cpp" />
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Player\PlayerCoverSubState.cpp" />
@@ -485,6 +496,11 @@
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterHealthController.h" />
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterMoveController.h" />
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\CharacterWeaponController.h" />
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyActionState.h" />
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyDeathSubState.h" />
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyReactionState.h" />
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemySearchSubState.h" />
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyStateMachine.h" />
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterState.h" />
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterStateMachine.h" />
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\ICharacterSubState.h" />

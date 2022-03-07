@@ -3,6 +3,7 @@
 #include "PlayerController.h"
 #include "../CharacterMoveController.h"
 #include "../CharacterWeaponController.h"
+#include "../Camera/CameraController.h"
 #include "Components/inc/CRigidBody.h"
 #include "Components/inc/CAnimator.h"
 
@@ -35,6 +36,14 @@ namespace TKGEngine
 		m_mover = GetComponent<CharacterMoveController>();
 		// CharacterWeaponController
 		m_weapon_controller = GetComponent<CharacterWeaponController>();
+		// CameraController
+		const auto camera_target = IGameObject::Find("CameraTarget");
+		if (camera_target == nullptr)
+		{
+			LOG_ASSERT("failed find \"CameraTarget\"");
+			return;
+		}
+		m_camera = camera_target->GetComponent<CameraController>();
 		// RigidBody
 		m_rigidbody = GetComponent<RigidBody>();
 		// Animator
@@ -67,6 +76,9 @@ namespace TKGEngine
 			m_begin_position = player->GetClimbOverBegin();
 			m_direction = player->GetClimbOverDirection();
 			m_end_position = m_begin_position + m_direction * m_move_distance;
+			// 乗り越え中は立ち状態とする
+			m_is_crouching = (player->GetPostureState() == PlayerController::PostureState::Crouching);
+			player->SetPostureState(PlayerController::PostureState::Standing);
 		}
 
 		// アニメーション情報のセット
@@ -76,6 +88,12 @@ namespace TKGEngine
 			animator->SetTrigger("OnClimbOver");
 			// 立ち状態における正規化速度
 			animator->SetFloat("NormVelocity", 0.0f);
+		}
+
+		// カメラ状態セット
+		if (const auto camera = m_camera.GetWeak().lock())
+		{
+			camera->SetState(CameraController::CameraState::Explore);
 		}
 
 		// 状態をセット
@@ -209,6 +227,16 @@ namespace TKGEngine
 		{
 			mover->Enabled(true);
 			mover->SetForward(VECTOR2(m_direction.x, m_direction.z));
+		}
+
+		// しゃがみ状態だったら姿勢を変化させる
+		if (m_is_crouching)
+		{
+			if (const auto player = m_player.GetWeak().lock())
+			{
+				// 乗り越え中は立ち状態とする
+				player->SetPostureState(PlayerController::PostureState::Crouching);
+			}
 		}
 	}
 

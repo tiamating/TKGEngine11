@@ -37,13 +37,21 @@ namespace TKGEngine
 
 		// 重力を更新
 		float gravity_velocity = rigidbody->GetLinearVelocity().y;
-		if(ground_checker->IsGround())
+		if (m_is_updated_gravity)
 		{
-			gravity_velocity = 0.0f;
+			if (ground_checker->IsGround())
+			{
+				gravity_velocity = 0.0f;
+			}
+			else
+			{
+				gravity_velocity += m_gravity_acceleration * delta_time;
+			}
 		}
 		else
 		{
-			gravity_velocity += m_gravity_acceleration * delta_time;
+			gravity_velocity = 0.0f;
+			m_is_updated_gravity = true;
 		}
 
 		// 方向を更新

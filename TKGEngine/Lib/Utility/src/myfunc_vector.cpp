@@ -16,13 +16,8 @@ namespace TKGEngine
 	const VECTOR3 VECTOR3::Down = { 0.f, -1.f, 0.f };
 	const VECTOR3 VECTOR3::Right = { 1.f, 0.f, 0.f };
 	const VECTOR3 VECTOR3::Left = { -1.f, 0.f, 0.f };
-#ifdef AXIS_RH
-	const VECTOR3 VECTOR3::Forward = { 0.f, 0.f, -1.f };
-	const VECTOR3 VECTOR3::Backward = { 0.f, 0.f, 1.f };
-#else
 	const VECTOR3 VECTOR3::Forward = { 0.f, 0.f, 1.f };
 	const VECTOR3 VECTOR3::Backward = { 0.f, 0.f, -1.f };
-#endif// #ifdef AXIS_RH
 
 	const VECTOR4 VECTOR4::Zero = { 0.f, 0.f, 0.f, 0.f };
 	const VECTOR4 VECTOR4::One = { 1.f, 1.f, 1.f, 1.f };
@@ -41,4 +36,7 @@ namespace TKGEngine
 									  0.f, 0.f, 1.f, 1.f };
 
 	const Quaternion Quaternion::Identity = { 0.f,0.f,0.f,1.f };
+	const Quaternion Quaternion::ROTATE_AXIS_X_180 = { 1.f,0.f,0.f,0.f };
+	const Quaternion Quaternion::ROTATE_AXIS_Y_180 = { 0.f,1.f,0.f,0.f };
+	const Quaternion Quaternion::ROTATE_AXIS_Z_180 = { 0.f,0.f,1.f,0.f };
 }// namespace TKGEngine

@@ -2045,13 +2045,9 @@ namespace TKGEngine
 			}
 			else
 			{
-#ifdef AXIS_RH
-				Z = g_XMIdentityR2;
-#else
 				Z = g_XMNegIdentityR2;
-#endif// #ifdef AXIS_RH
 			}
-			}
+		}
 		else
 		{
 			Z = XMVector3Normalize(Z);
@@ -2269,11 +2265,9 @@ namespace TKGEngine
 	inline MATRIX MATRIX::CreateWorld(const VECTOR3& position, const VECTOR3& forward, const VECTOR3& up)
 	{
 		using namespace DirectX;
-#ifdef AXIS_RH
-		const XMVECTOR zaxis = XMVector3Normalize(XMVectorNegate(XMLoadFloat3(&forward)));
-#else
+
 		const XMVECTOR zaxis = XMVector3Normalize(XMLoadFloat3(&forward));
-#endif// #ifdef AXIS_RH
+
 		XMVECTOR yaxis = XMLoadFloat3(&up);
 		const XMVECTOR xaxis = XMVector3Normalize(XMVector3Cross(yaxis, zaxis));
 		yaxis = XMVector3Cross(zaxis, xaxis);
@@ -2743,11 +2737,9 @@ namespace TKGEngine
 	inline void Quaternion::SetLookRotation(const VECTOR3& view, const VECTOR3& up)
 	{
 		using namespace DirectX;
-#ifdef AXIS_RH
-		const XMVECTOR F = XMVector3Normalize(XMVectorNegate(XMLoadFloat3(&view)));	// forward
-#else
+
 		const XMVECTOR F = XMVector3Normalize(XMLoadFloat3(&view));	// forward
-#endif// #ifdef AXIS_RH
+
 		XMVECTOR U = XMVector3Normalize(XMLoadFloat3(&up));
 		const XMVECTOR epsilon = XMLoadFloat(&MyMath::Epsilon);
 		// forward‚ªupwards‚Æˆê’v‚·‚é‚Æ‚«
@@ -2908,11 +2900,8 @@ namespace TKGEngine
 	{
 		using namespace DirectX;
 
-#ifdef AXIS_RH
-		const XMVECTOR F = XMVector3Normalize(XMVectorNegate(XMLoadFloat3(&forward)));	// forward
-#else
 		const XMVECTOR F = XMVector3Normalize(XMLoadFloat3(&forward));	// forward
-#endif// #ifdef AXIS_RH
+		
 		XMVECTOR U = XMVector3Normalize(XMLoadFloat3(&upward));
 		const XMVECTOR epsilon = XMLoadFloat(&MyMath::Epsilon);
 		// forward‚ªupwards‚Æˆê’v‚·‚é‚Æ‚«

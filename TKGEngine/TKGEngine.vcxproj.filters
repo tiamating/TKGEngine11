@@ -42,6 +42,7 @@
     <FxCompile Include="Shader\PBR\PBR_N_PS.hlsl" />
     <FxCompile Include="Shader\PBR\PBR_N_R_M_PS.hlsl" />
     <FxCompile Include="Shader\Stage\WireFence_Depth_PS.hlsl" />
+    <FxCompile Include="Shader\PBR\PBR_N_M_PS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lib\Utility\inc\myfunc_string.h">
@@ -578,6 +579,21 @@
     <ClInclude Include="Lib\Application\Objects\Components\Scripts\Stage\GoalManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyStateMachine.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyActionState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemySearchSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyReactionState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyDeathSubState.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Lib\Application\Resource\src\Target.cpp">
@@ -968,6 +984,21 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="Lib\Application\Objects\Components\Scripts\Stage\GoalManager.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyStateMachine.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyActionState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemySearchSubState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyReactionState.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Lib\Application\Objects\Components\Scripts\Character\Enemy\EnemyDeathSubState.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>

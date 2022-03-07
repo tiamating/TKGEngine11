@@ -76,6 +76,13 @@ namespace TKGEngine
 		{
 			player->SetPostureState(PlayerController::PostureState::Standing);
 		}
+
+		// カメラ状態セット
+		if (const auto camera = m_camera.GetWeak().lock())
+		{
+			camera->SetState(CameraController::CameraState::Slide);
+		}
+
 		// フラグのリセット
 		m_on_transition_cover = false;
 		// 初速度をセット

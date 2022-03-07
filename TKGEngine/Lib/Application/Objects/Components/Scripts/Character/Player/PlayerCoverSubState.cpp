@@ -111,6 +111,12 @@ namespace TKGEngine
 			mover->SetSpeed(0.0f);
 		}
 
+		// カメラ状態セット
+		if (const auto camera = m_camera.GetWeak().lock())
+		{
+			camera->SetState(CameraController::CameraState::Cover);
+		}
+
 		// 状態をリセット
 		m_state = State::Ready;
 	}
@@ -310,9 +316,6 @@ namespace TKGEngine
 		//// カバー中にカバーボタンでカバー終了(エイム時は遷移できない)
 		if (!on_aiming)
 		{
-			// UI表示
-			m_cover_ui->Enabled(true);
-
 			// 入力時は遷移
 			if (IInput::Get().GetPadDown(0, Input::GamePad::B))
 			{
@@ -320,14 +323,18 @@ namespace TKGEngine
 				m_mover->SetSpeed(0.0f);
 				// 左スティックの入力を止める
 				m_player->SetAllowLStickInput(false);
-				// 立ち状態にする
-				m_player->SetPostureState(PlayerController::PostureState::Standing);
 
+				// UI非表示
+				m_cover_ui->Enabled(false);
 				// ステート遷移
 				m_state = State::EndCover;
 
 				return;
 			}
+
+			// UI表示
+			m_cover_ui->Enabled(true);
+
 		}
 
 		//// 乗り越え

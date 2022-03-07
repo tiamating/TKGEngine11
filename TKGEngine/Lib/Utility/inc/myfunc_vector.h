@@ -45,9 +45,9 @@ namespace TKGEngine
 		constexpr explicit VECTOR2(float _x) noexcept : XMFLOAT2(_x, _x) {}
 		constexpr VECTOR2(float _x, float _y) noexcept : XMFLOAT2(_x, _y) {}
 		VECTOR2(DirectX::FXMVECTOR v) noexcept { XMStoreFloat2(this, v); }
-		VECTOR2(const XMFLOAT2& v) noexcept { this->x = v.x; this->y = v.y; }
-		explicit VECTOR2(const DirectX::XMFLOAT3& v) noexcept { this->x = v.x; this->y = v.y; }
-		explicit VECTOR2(const DirectX::XMFLOAT4& v) noexcept { this->x = v.x; this->y = v.y; }
+		VECTOR2(const XMFLOAT2& v) noexcept : XMFLOAT2(v.x, v.y) {}
+		explicit VECTOR2(const DirectX::XMFLOAT3& v) noexcept : XMFLOAT2(v.x, v.y) {}
+		explicit VECTOR2(const DirectX::XMFLOAT4& v) noexcept : XMFLOAT2(v.x, v.y) {}
 		explicit VECTOR2(const DirectX::XMVECTORF32& f) { this->x = f.f[0]; this->y = f.f[1]; }
 
 		VECTOR2(const VECTOR2&) noexcept = default;
@@ -245,14 +245,14 @@ namespace TKGEngine
 		}
 
 	public:
-		constexpr VECTOR3() noexcept : DirectX::XMFLOAT3(0.f, 0.f, 0.f) {}
+		constexpr VECTOR3() noexcept : XMFLOAT3(0.f, 0.f, 0.f) {}
 		constexpr explicit VECTOR3(float _x) noexcept : XMFLOAT3(_x, _x, _x) {}
-		constexpr VECTOR3(float _x, float _y, float _z) noexcept : DirectX::XMFLOAT3(_x, _y, _z) {}
+		constexpr VECTOR3(float _x, float _y, float _z) noexcept : XMFLOAT3(_x, _y, _z) {}
 		VECTOR3(DirectX::FXMVECTOR v) noexcept { DirectX::XMStoreFloat3(this, v); }
-		VECTOR3(const DirectX::XMFLOAT2& v, float z) noexcept { this->x = v.x; this->y = v.y; this->z = z; }
-		explicit VECTOR3(const DirectX::XMFLOAT2& v) noexcept { this->x = v.x; this->y = v.y; this->z = 0.f; }
-		VECTOR3(const XMFLOAT3& v) noexcept { this->x = v.x; this->y = v.y; this->z = v.z; }
-		explicit VECTOR3(const DirectX::XMFLOAT4& v) noexcept { this->x = v.x; this->y = v.y; this->z = v.z; }
+		VECTOR3(const DirectX::XMFLOAT2& v, float z) noexcept : XMFLOAT3(v.x, v.y, z) {}
+		explicit VECTOR3(const DirectX::XMFLOAT2& v) noexcept : XMFLOAT3(v.x, v.y, 0.0f) {}
+		VECTOR3(const XMFLOAT3& v) noexcept : XMFLOAT3(v.x, v.y, v.z) {}
+		explicit VECTOR3(const DirectX::XMFLOAT4& v) noexcept : XMFLOAT3(v.x, v.y, v.z) {}
 		explicit VECTOR3(const DirectX::XMVECTORF32& f) noexcept { this->x = f.f[0]; this->y = f.f[1]; this->z = f.f[2]; }
 
 		VECTOR3(const VECTOR3&) noexcept = default;
@@ -478,14 +478,14 @@ namespace TKGEngine
 		}
 
 	public:
-		constexpr VECTOR4() noexcept : DirectX::XMFLOAT4(0.f, 0.f, 0.f, 0.f) {}
+		constexpr VECTOR4() noexcept : XMFLOAT4(0.f, 0.f, 0.f, 0.f) {}
 		constexpr explicit VECTOR4(float _x) noexcept : XMFLOAT4(_x, _x, _x, _x) {}
-		constexpr VECTOR4(float _x, float _y, float _z, float _w) noexcept : DirectX::XMFLOAT4(_x, _y, _z, _w) {}
-		VECTOR4(DirectX::FXMVECTOR v) noexcept { DirectX::XMStoreFloat4(this, v); }
-		VECTOR4(const DirectX::XMFLOAT3& v, float w) noexcept { this->x = v.x; this->y = v.y; this->z = v.z; this->w = w; }
-		explicit VECTOR4(const DirectX::XMFLOAT2& v) noexcept { this->x = v.x; this->y = v.y; this->z = 0.f; this->w = 0.f; }
-		explicit VECTOR4(const DirectX::XMFLOAT3& v) noexcept { this->x = v.x; this->y = v.y; this->z = v.z; this->w = 0.f; }
-		VECTOR4(const XMFLOAT4& v) noexcept { this->x = v.x; this->y = v.y; this->z = v.z; this->w = v.w; }
+		constexpr VECTOR4(float _x, float _y, float _z, float _w) noexcept : XMFLOAT4(_x, _y, _z, _w) {}
+		VECTOR4(DirectX::FXMVECTOR v) noexcept { XMStoreFloat4(this, v); }
+		VECTOR4(const DirectX::XMFLOAT3& v, float w) noexcept : XMFLOAT4(v.x, v.y, v.z, w) {}
+		explicit VECTOR4(const DirectX::XMFLOAT2& v) noexcept : XMFLOAT4(v.x, v.y, 0.0f, 0.0f) {}
+		explicit VECTOR4(const DirectX::XMFLOAT3& v) noexcept : XMFLOAT4(v.x, v.y, v.z, 0.0f) {}
+		VECTOR4(const XMFLOAT4& v) noexcept : XMFLOAT4(v.x, v.y, v.z, v.w) {}
 		explicit VECTOR4(const DirectX::XMVECTORF32& f) noexcept { this->x = f.f[0]; this->y = f.f[1]; this->z = f.f[2]; this->w = f.f[3]; }
 
 		VECTOR4(const VECTOR4&) noexcept = default;
@@ -753,21 +753,11 @@ namespace TKGEngine
 		constexpr const VECTOR3 Left() const noexcept { return VECTOR3(-_11, -_12, -_13); }
 		void Left(const VECTOR3& v) noexcept { _11 = -v.x; _12 = -v.y; _13 = -v.z; }
 
-#ifdef AXIS_RH
-		constexpr const VECTOR3 Forward() const noexcept { return VECTOR3(-_31, -_32, -_33); }
-		void Forward(const VECTOR3& v) noexcept { _31 = -v.x; _32 = -v.y; _33 = -v.z; }
-#else
 		constexpr const VECTOR3 Forward() const noexcept { return VECTOR3(_31, _32, _33); }
 		void Forward(const VECTOR3& v) noexcept { _31 = v.x; _32 = v.y; _33 = v.z; }
-#endif// #ifdef AXIS_RH
 
-#ifdef AXIS_RH
-		constexpr const VECTOR3 Backward() const noexcept { return VECTOR3(_31, _32, _33); }
-		void Backward(const VECTOR3& v) noexcept { _31 = v.x; _32 = v.y; _33 = v.z; }
-#else
 		constexpr const VECTOR3 Backward() const noexcept { return VECTOR3(-_31, -_32, -_33); }
 		void Backward(const VECTOR3& v) noexcept { _31 = -v.x; _32 = -v.y; _33 = -v.z; }
-#endif// #ifdef AXIS_RH
 
 		constexpr const VECTOR3 Translation() const noexcept { return VECTOR3(_41, _42, _43); }
 		void Translation(const VECTOR3& v) noexcept { _41 = v.x; _42 = v.y; _43 = v.z; }
@@ -993,6 +983,9 @@ namespace TKGEngine
 
 		// Constants
 		static const Quaternion Identity;
+		static const Quaternion ROTATE_AXIS_X_180;
+		static const Quaternion ROTATE_AXIS_Y_180;
+		static const Quaternion ROTATE_AXIS_Z_180;
 	};
 
 	// Binary operators

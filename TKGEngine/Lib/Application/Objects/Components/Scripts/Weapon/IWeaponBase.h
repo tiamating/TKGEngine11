@@ -18,8 +18,8 @@ namespace TKGEngine
 		IWeaponBase& operator=(const IWeaponBase&) = delete;
 		IWeaponBase& operator=(IWeaponBase&&) = default;
 
-		// 発射
-		virtual void Shot(const VECTOR3& origin, const VECTOR3& direction) = 0;
+		// 発射(ダメージを与えたときはtrue)
+		virtual bool Shot(const VECTOR3& origin, const VECTOR3& direction) = 0;
 		// 発射可能かチェック
 		virtual bool CheckCanShot() = 0;
 
@@ -43,8 +43,10 @@ namespace TKGEngine
 	protected:
 		// マズルフラッシュ用パーティクル
 		SWPtr<ParticleSystem> m_muzzle_flush;
-		// ヒット用パーティクル
-		SWPtr<ParticleSystem> m_hit_effect;
+		// ステージヒット用パーティクル
+		SWPtr<ParticleSystem> m_stage_hit_effect;
+		// 敵ヒット用パーティクル
+		SWPtr<ParticleSystem> m_enemy_hit_effect;
 		
 		// リロード中フラグ
 		bool m_on_reloading = false;

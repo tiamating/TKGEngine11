@@ -23,7 +23,9 @@ namespace TKGEngine
 		// 生存しているか
 		bool IsAlive() const { return m_health > 0; }
 		// 無敵中か
-		bool IsInvincible() const { return m_is_invincible; }
+		bool IsInvincible() const { return m_is_invincible_state || m_is_invincible_on_damage; }
+		// 無敵状態のセット
+		void SetInvincible(const bool is_invincible) { m_is_invincible_state = is_invincible; }
 
 		// ダメージ処理
 		bool ApplyDamage(int damage);
@@ -48,7 +50,10 @@ namespace TKGEngine
 		// 無敵状態
 		float m_invincible_timer = 0.0f;
 		float m_invincible_time = 0.1f;
-		bool m_is_invincible = false;
+		// 被弾によっての無敵
+		bool m_is_invincible_on_damage = false;
+		// 状態をセットしての無敵
+		bool m_is_invincible_state = false;
 
 
 	private:

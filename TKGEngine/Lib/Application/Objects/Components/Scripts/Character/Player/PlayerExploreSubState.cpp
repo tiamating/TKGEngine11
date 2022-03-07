@@ -80,6 +80,12 @@ namespace TKGEngine
 
 		// 状態の初期化
 		m_on_move_begin = false;
+
+		// カメラ状態セット
+		if(const auto camera = m_camera.GetWeak().lock())
+		{
+			camera->SetState(CameraController::CameraState::Explore);
+		}
 	}
 
 	void PlayerExploreSubState::BeforeExecute()
@@ -798,8 +804,7 @@ namespace TKGEngine
 #ifdef USE_IMGUI
 	void PlayerExploreSubState::OnGUI()
 	{
-		ImGui::SliderFloat("##brake", &m_linear_brake, 1.0f, 20.0f);
-		ImGui::SliderFloat("##aim brake", &m_aim_brake, 1.0f, 20.0f);
+		ImGui::SliderFloat("AngularSpeed", &m_angular_speed, 1.0f, 500.0f);
 	}
 #endif
 }

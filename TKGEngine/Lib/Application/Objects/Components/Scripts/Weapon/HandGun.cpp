@@ -2,13 +2,16 @@
 
 #include "Components/inc/CParticleSystem.h"
 #include "../Character/CharacterWeaponController.h"
+#include "../Character/CharacterHealthController.h"
 
 REGISTERCOMPONENT(TKGEngine::HandGun);
 
 namespace TKGEngine
 {
-	void HandGun::Shot(const VECTOR3& origin, const VECTOR3& direction)
+	bool HandGun::Shot(const VECTOR3& origin, const VECTOR3& direction)
 	{
+		bool is_added_damage = false;
+
 		// マズルフラッシュを発生させる
 		if (const auto muzzle_flush = m_muzzle_flush.GetWeak().lock())
 		{
@@ -20,20 +23,61 @@ namespace TKGEngine
 		constexpr int hit_layer = 1 << static_cast<int>(Layer::EnemyHit) | 1 << static_cast<int>(Layer::Stage);
 		if (Physics::Raycast(origin, direction, ray_data, m_range_distance, true, hit_layer))
 		{
-			if (const auto effect = m_hit_effect.GetWeak().lock())
+			// 衝突対象を判定
+			std::shared_ptr<ParticleSystem> hit_effect;
+			const auto hit_object = ray_data.collider->GetGameObject();
+			const auto hit_layer = hit_object->GetLayer();
+			// Stage
+			if (hit_layer == Layer::Stage)
 			{
-				// 衝突位置と法線を軸としてパーティクルを発生させる
-				const auto transform = effect->GetTransform();
+				hit_effect = m_stage_hit_effect.GetWeak().lock();
+			}
+			// Enemy
+			else if (hit_layer == Layer::EnemyHit)
+			{
+				hit_effect = m_enemy_hit_effect.GetWeak().lock();
+				//// ダメージ処理
+				// Enemyの取得
+				auto transform = hit_object->GetTransform();
+				while (true)
+				{
+					// Enemyを取得したらダメージ処理
+					const auto object = transform->GetGameObject();
+					if (object->GetLayer() == Layer::Enemy)
+					{
+						if (const auto health_comp = object->GetComponent<CharacterHealthController>())
+						{
+							// ダメージを適用する
+							is_added_damage = health_comp->ApplyDamage(m_damage);
+						}
+						break;
+					}
+
+					// Parentの取得
+					transform = transform->GetParent();
+					if (transform == nullptr)
+					{
+						break;
+					}
+				}
+			}
+
+			// 衝突位置と法線を軸としてパーティクルを発生させる
+			if (hit_effect)
+			{
+				const auto transform = hit_effect->GetTransform();
 				transform->Position(ray_data.position + ray_data.normal * 0.1f);
-				transform->Rotation(Quaternion::FromToRotation(VECTOR3::Forward, ray_data.normal));
-				effect->Play();
+				transform->Forward(-ray_data.normal);
+				hit_effect->Play();
 			}
 		}
-		
+
 		// 弾を減らす
 		--m_remain_bullet_num;
 		// リキャストタイマーを発生させる
 		m_recast_timer = 1.0f / m_rate_per_seconds;
+
+		return is_added_damage;
 	}
 
 	bool HandGun::CheckCanShot()
@@ -119,10 +163,15 @@ namespace TKGEngine
 				{
 					m_muzzle_flush = ps;
 				}
-				// ヒットエフェクト
-				if (child->GetName() == std::string("HitEffect"))
+				// ステージヒットエフェクト
+				if (child->GetName() == std::string("StageHitEffect"))
 				{
-					m_hit_effect = ps;
+					m_stage_hit_effect = ps;
+				}
+				// 敵ヒットエフェクト
+				if (child->GetName() == std::string("EnemyHitEffect"))
+				{
+					m_enemy_hit_effect = ps;
 				}
 			}
 		}

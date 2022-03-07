@@ -258,7 +258,7 @@ namespace TKGEngine
 		std::vector<std::string> names;
 		// Bone検索
 		{
-			static std::function<void(FbxNode*)> traverse = [&](FbxNode* node) {
+			std::function<void(FbxNode*)> traverse = [&](FbxNode* node) {
 				if (!node)
 					return;
 				const int child_cnt = node->GetChildCount();
@@ -312,7 +312,6 @@ namespace TKGEngine
 					}
 				}
 				// Traverse Children
-				//const int child_cnt = node->GetChildCount();
 				for (int i = 0; i < child_cnt; ++i)
 				{
 					traverse(node->GetChild(i));
@@ -321,16 +320,15 @@ namespace TKGEngine
 			traverse(root_node);
 		}
 
-		std::unordered_map<std::string, FbxAMatrix> node_geometric_matries;
+		std::unordered_map<std::string, FbxAMatrix> node_geometric_matrices;
 
 		// Root Node検索
 		{
-			int node_idx = 0;
 			p_avatar->m_nodes.resize(bone_cnt);
 
 			for (auto&& root : root_bones)
 			{
-				static std::function<void(FbxNode*)> traverse = [&](FbxNode* node) {
+				std::function<void(FbxNode*)> traverse = [&](FbxNode* node) {
 					if (!node)
 						return;
 
@@ -376,7 +374,7 @@ namespace TKGEngine
 						p_avatar->m_nodes.at(itr->second).init_translate = FbxDouble4ToVECTOR3(local_transform.GetT());
 
 						// Geometric matrix
-						node_geometric_matries.emplace(
+						node_geometric_matrices.emplace(
 							node->GetName(),
 							FbxAMatrix(
 								node->GetGeometricTranslation(FbxNode::eSourcePivot),
@@ -432,7 +430,7 @@ namespace TKGEngine
 							fbx_cluster->GetTransformLinkMatrix(fbx_bone_space_transform);
 
 							// ボーン逆行列を計算する
-							FbxAMatrix fbxInverse_transform = fbx_bone_space_transform.Inverse() * fbx_mesh_space_transform * node_geometric_matries.at(fbx_cluster->GetLink()->GetName());
+							FbxAMatrix fbxInverse_transform = fbx_bone_space_transform.Inverse() * fbx_mesh_space_transform * node_geometric_matrices.at(fbx_cluster->GetLink()->GetName());
 
 							MATRIX inverse_transform;
 							FbxAMatrixToMATRIX(fbxInverse_transform, inverse_transform);
@@ -445,6 +443,7 @@ namespace TKGEngine
 			}
 		}
 
+		// 整列されたボーン名を登録していく
 		p_avatar->m_aligned_bone_names.resize(/*p_avatar->m_nodes.size()*/current_bone_idx);
 		{
 			for (auto&& node : p_avatar->m_nodes)
@@ -455,8 +454,6 @@ namespace TKGEngine
 				}
 			}
 		}
-
-		//bone_names = p_avatar->m_aligned_bone_names;
 
 		// File書き出し
 		if (is_save)

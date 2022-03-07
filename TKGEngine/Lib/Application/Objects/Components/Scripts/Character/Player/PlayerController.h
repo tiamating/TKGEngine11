@@ -33,6 +33,7 @@ namespace TKGEngine
 		// 姿勢状態
 		void SetPostureState(PostureState state);
 		PostureState GetPostureState() const;
+		float GetCrouchRatio() const { return m_crouch_ratio; }
 
 		// 左スティック入力状態
 		const StickInputData& GetLStickData() const { return m_left_stick_input; }

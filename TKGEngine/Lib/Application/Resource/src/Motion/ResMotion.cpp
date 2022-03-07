@@ -11,6 +11,7 @@
 #include <vector>
 #include <unordered_map>
 #include <string>
+#include <regex>
 
 #include <d3d11.h>
 #include <wrl.h>
@@ -381,8 +382,10 @@ namespace TKGEngine
 						keyframe->keys.at(fbx_node_idx).rotate = FbxDouble4ToVECTOR4(fbxLocalTransform.GetQ());
 						keyframe->keys.at(fbx_node_idx).translate = FbxDouble4ToVECTOR3(fbxLocalTransform.GetT());
 
+						// スペースをアンダーバーに置き換える
+						const std::string replaced_node_name = std::regex_replace(fbx_node->GetName(), std::regex(" "), "_");
 						// アニメーション配列の要素とノードの名前を結びつける
-						p_motions.at(filename_idx)->m_key_index.emplace(fbx_node->GetName(), fbx_node_idx);
+						p_motions.at(filename_idx)->m_key_index.emplace(replaced_node_name, fbx_node_idx);
 					}
 				}
 				seconds += sampling_time;

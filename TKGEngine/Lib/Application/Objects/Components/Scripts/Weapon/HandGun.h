@@ -17,7 +17,7 @@ namespace TKGEngine
 		//////////////////////////////////
 
 		// 発射
-		virtual void Shot(const VECTOR3& origin, const VECTOR3& direction) override;
+		virtual bool Shot(const VECTOR3& origin, const VECTOR3& direction) override;
 		// 発射可能かチェック
 		virtual bool CheckCanShot() override;
 
@@ -72,7 +72,7 @@ namespace TKGEngine
 		float m_range_distance = 20.0f;
 
 		// ダメージ量
-		int m_damage = 1;
+		int m_damage = 5;
 
 
 	private:

@@ -6,6 +6,7 @@ namespace TKGEngine
 {
 	class PlayerActionState;
 	class PlayerController;
+	class CameraController;
 	class CharacterMoveController;
 	class CharacterWeaponController;
 	class RigidBody;
@@ -43,6 +44,7 @@ namespace TKGEngine
 		// 参照
 		SWPtr<PlayerActionState> m_parent_state;
 		SWPtr<PlayerController> m_player;
+		SWPtr<CameraController> m_camera;
 		SWPtr<CharacterMoveController> m_mover;
 		SWPtr<CharacterWeaponController> m_weapon_controller;
 		SWPtr<RigidBody> m_rigidbody;
@@ -77,6 +79,8 @@ namespace TKGEngine
 		// 終点についてから遷移するまでの時間
 		float m_end_transition_time = 0.0f;
 
+		// しゃがみ状態だったか
+		bool m_is_crouching = false;
 
 	public:
 		//////////////////////////////////

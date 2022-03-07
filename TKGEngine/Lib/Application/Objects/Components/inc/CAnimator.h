@@ -80,7 +80,25 @@ namespace TKGEngine
 		template <class Archive>
 		void serialize(Archive& archive, const std::uint32_t version)
 		{
-			//if (version > 0)
+			if (version == 2)
+			{
+				archive(
+					cereal::base_class<Behaviour>(this),
+					CEREAL_NVP(m_controller_filedata),
+					CEREAL_NVP(m_avatar_filedata),
+					CEREAL_NVP(m_root_index),
+					CEREAL_NVP(m_bone_references),
+					CEREAL_NVP(m_node_references),
+					CEREAL_NVP(m_update_mode),
+					CEREAL_NVP(m_culling_mode),
+					CEREAL_NVP(m_root_bone_index),
+					CEREAL_NVP(m_root_bone_init_translate),
+					CEREAL_NVP(m_root_bone_init_rotation),
+					CEREAL_NVP(m_root_bone_init_scale),
+					CEREAL_NVP(m_ignore_root_motion)
+				);
+			}
+			else if (version == 1)
 			{
 				archive(
 					cereal::base_class<Behaviour>(this),
@@ -186,6 +204,6 @@ namespace TKGEngine
 
 }// namespaace TKGEngine
 
-CEREAL_CLASS_VERSION(TKGEngine::Animator, 1)
+CEREAL_CLASS_VERSION(TKGEngine::Animator, 2)
 CEREAL_REGISTER_TYPE_WITH_NAME(TKGEngine::Animator, "TKGEngine::Animator")
 CEREAL_REGISTER_POLYMORPHIC_RELATION(TKGEngine::Behaviour, TKGEngine::Animator)

@@ -67,7 +67,7 @@ namespace TKGEngine
 			if (ImGui::BeginPopup("Select Animator Popup"))
 			{
 				// ©g‚ğŠÜ‚ß‚ÄAe‚ğ’Tõ‚µ‚ÄAnimator‚ğ‚Â‚à‚Ì‚ğ•\¦‚·‚é
-				static std::function<void(const std::shared_ptr<Transform>&)> recurse = [&](const std::shared_ptr<Transform>& tr)
+				std::function<void(const std::shared_ptr<Transform>&)> recurse = [&](const std::shared_ptr<Transform>& tr)
 				{
 					// parent‚ª‘¶İ‚·‚é‚È‚ç’Tõ‚ğŒp‘±‚·‚é
 					const auto parent = tr->GetParent();

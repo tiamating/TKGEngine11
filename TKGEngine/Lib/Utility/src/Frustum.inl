@@ -93,7 +93,8 @@ namespace TKGEngine
 	{
 		CreateFromMatrix(projection);
 		m_frustum.Origin = pos;
-		m_frustum.Orientation = quat;
+		// DirectXMath‚ÌŠÖ”‚Å‚ÍForward‚ª-z‚Ì‚½‚ßC³—p‚ÉŠ|‚¯‚é
+		m_frustum.Orientation = Quaternion::ROTATE_AXIS_Y_180 * quat;
 	}
 
 	inline void Frustum::CreateFromMatrix(const MATRIX& projection)

@@ -2,6 +2,7 @@
 
 #include "Camera/CameraController.h"
 #include "Components/inc/CAnimator.h"
+#include "Components/inc/CUIRenderer.h"
 #include "Components/Scripts/Weapon/IWeaponBase.h"
 
 REGISTERCOMPONENT(TKGEngine::CharacterWeaponController);
@@ -28,6 +29,11 @@ namespace TKGEngine
 		m_camera = camera_target->GetComponent<CameraController>();
 		// Animator
 		m_animator = GetComponent<Animator>();
+		// UIRenderer
+		const auto reticle_owner = IGameObject::Find("ReticleManager")->GetTransform();
+		m_reticle_on_aim = reticle_owner->FindFromChild("ReticleOnAim").lock()->GetComponent<UIRenderer>();
+		m_reticle_no_aim = reticle_owner->FindFromChild("ReticleNoAim").lock()->GetComponent<UIRenderer>();
+		m_reticle_on_hit = reticle_owner->FindFromChild("ReticleOnHit").lock()->GetComponent<UIRenderer>();
 	}
 
 	/////////////////////////////////////////////////////////////////////////
@@ -43,6 +49,8 @@ namespace TKGEngine
 
 		// エイム状態の更新
 		AimUpdate();
+		// Hitレティクルの更新
+		ReticleUpdate();
 
 		// 参照の破棄
 		m_camera.Unlock();
@@ -61,10 +69,30 @@ namespace TKGEngine
 		if (IInput::Get().GetPadLTrigger(0) > m_left_trigger_threshold)
 		{
 			SetAimState(AimState::Hold);
+
+			// レティクルUIを切り替える
+			if (const auto ui = m_reticle_on_aim.GetWeak().lock())
+			{
+				ui->Enabled(true);
+			}
+			if (const auto ui = m_reticle_no_aim.GetWeak().lock())
+			{
+				ui->Enabled(false);
+			}
 		}
 		else
 		{
 			SetAimState(AimState::Low);
+
+			// レティクルUIを切り替える
+			if (const auto ui = m_reticle_on_aim.GetWeak().lock())
+			{
+				ui->Enabled(false);
+			}
+			if (const auto ui = m_reticle_no_aim.GetWeak().lock())
+			{
+				ui->Enabled(true);
+			}
 		}
 	}
 
@@ -99,7 +127,13 @@ namespace TKGEngine
 			// カメラ座標とカメラ方向から弾を発射
 			if (const auto camera = m_camera.GetWeak().lock())
 			{
-				weapon->Shot(camera->GetCameraPosition(), camera->GetCameraDirection());
+				// 発射処理(ダメージを与えていたらtrue)
+				if (weapon->Shot(camera->GetCameraPosition(), camera->GetCameraDirection()))
+				{
+					// Hitレティクルを表示
+					m_reticle_on_hit_timer = m_aim_transition_time;
+				}
+				// 発射アニメーション
 				if (const auto animator = m_animator.GetWeak().lock())
 				{
 					animator->SetTrigger("OnShot");
@@ -125,7 +159,7 @@ namespace TKGEngine
 		const auto weapon = m_weapons.at(static_cast<int>(m_current_weapon_type)).GetWeak().lock();
 		if (weapon == nullptr)
 			return;
-		if(weapon->CheckCanReload())
+		if (weapon->CheckCanReload())
 		{
 			if (const auto animator = m_animator.GetWeak().lock())
 			{
@@ -136,7 +170,7 @@ namespace TKGEngine
 
 	void CharacterWeaponController::CancelReload()
 	{
-		if(const auto weapon = m_weapons.at(static_cast<int>(m_current_weapon_type)).GetWeak().lock())
+		if (const auto weapon = m_weapons.at(static_cast<int>(m_current_weapon_type)).GetWeak().lock())
 		{
 			weapon->CancelReload();
 		}
@@ -173,6 +207,25 @@ namespace TKGEngine
 		if (weapon->OnReloading())
 		{
 			m_aim_upper_weight = 1.0f;
+		}
+	}
+
+	void CharacterWeaponController::ReticleUpdate()
+	{
+		const float delta_time = ITime::Get().DeltaTime();
+
+		// タイマーを減算
+		m_reticle_on_hit_timer -= delta_time;
+
+		// UIを切り替える
+		const auto ui = m_reticle_on_hit.GetWeak().lock();
+		if (m_reticle_on_hit_timer > 0.0f)
+		{
+			ui->Enabled(true);
+		}
+		else
+		{
+			ui->Enabled(false);
 		}
 	}
 

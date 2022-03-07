@@ -1685,9 +1685,18 @@ namespace TKGEngine
 			binormal = VECTOR3::Zero;
 			return;
 		}
+
+		const VECTOR3 normal = VECTOR3::Cross(delta_pos2, delta_pos1).Normalized();
+
 		const float inv_uv_cross = 1.0f / uv_cross;
 		tangent = (delta_pos1 * delta_uv2.y - delta_pos2 * delta_uv1.y) * inv_uv_cross;
 		binormal = (delta_pos2 * delta_uv1.x - delta_pos1 * delta_uv2.x) * inv_uv_cross;
+
+		// UVÇÃå¸Ç´Ççló∂
+		if (VECTOR3::Dot(VECTOR3::Cross(normal, tangent), binormal) < 0.0f)
+		{
+			tangent = -tangent;
+		}
 
 		tangent = tangent.Normalized();
 		binormal = binormal.Normalized();

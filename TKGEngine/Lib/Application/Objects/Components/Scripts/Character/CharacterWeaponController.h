@@ -6,6 +6,7 @@ namespace TKGEngine
 	class IWeaponBase;
 	class CameraController;
 	class Animator;
+	class UIRenderer;
 
 	class CharacterWeaponController
 		: public MonoBehaviour
@@ -77,6 +78,8 @@ namespace TKGEngine
 		//////////////////////////////////
 		// エイム状態の更新
 		void AimUpdate();
+		// Hitレティクルの更新
+		void ReticleUpdate();
 
 
 		//////////////////////////////////
@@ -86,6 +89,9 @@ namespace TKGEngine
 		// 参照
 		SWPtr<CameraController> m_camera;
 		SWPtr<Animator> m_animator;
+		SWPtr<UIRenderer> m_reticle_on_aim;
+		SWPtr<UIRenderer> m_reticle_no_aim;
+		SWPtr<UIRenderer> m_reticle_on_hit;
 
 		// 入力閾値
 		float m_left_trigger_threshold = 0.5f;
@@ -102,6 +108,10 @@ namespace TKGEngine
 		float m_aim_weight = 0.0f;
 		float m_aim_upper_weight = 0.0f;
 		float m_aim_transition_time = 0.2f;	// 何秒で遷移するか
+
+		// ヒットレティクル用変数
+		float m_reticle_on_hit_time = 0.2f;
+		float m_reticle_on_hit_timer = 0.0f;
 
 
 	public:

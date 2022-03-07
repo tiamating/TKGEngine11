@@ -35,7 +35,7 @@ namespace TKGEngine
 		SWPtr<RigidBody> m_rigidbody;
 		SWPtr<CharacterGroundChecker> m_ground_checker;
 
-		// 	// X-Z平面での正面方向
+		// X-Z平面での正面方向
 		VECTOR2 m_current_forward = VECTOR2::Zero;
 		// 現在の速度のデータ
 		VECTOR2 m_current_velocity_direction = VECTOR2::Zero;	// X-Z平面での速度方向
@@ -43,6 +43,8 @@ namespace TKGEngine
 
 		// 重力加速度
 		float m_gravity_acceleration = -9.8f;
+		// 始めの更新1回は重力をなくす
+		bool m_is_updated_gravity = false;
 
 		// セットを許すか
 		bool m_allow_set_parameter = true;

@@ -24,8 +24,8 @@ namespace /* anonymous */
 	constexpr float CAMERA_MOVE_BRAKE = 5.0f;
 
 	// デバッグカメラの生成時に代入するTransform
-	TKGEngine::VECTOR3 g_camera_pos = TKGEngine::VECTOR3(0.0f, 5.0f, 8.0f);
-	TKGEngine::Quaternion g_camera_rot = TKGEngine::Quaternion::EulerAngles(TKGEngine::VECTOR3(-30.0f, 0.0f, 0.0f));
+	TKGEngine::VECTOR3 g_camera_pos = TKGEngine::VECTOR3(0.0f, 5.0f, -8.0f);
+	TKGEngine::Quaternion g_camera_rot = TKGEngine::Quaternion::EulerAngles(TKGEngine::VECTOR3(30.0f, 0.0f, 0.0f));
 }// namespace /* anonymous */
 
 namespace TKGEngine
@@ -436,6 +436,7 @@ namespace TKGEngine
 				m_rotation,
 				m_projection_matrix
 			);
+
 			// プロジェクション行列からReversed-z行列を作成
 			m_reversed_projection_matrix = m_projection_matrix * MATRIX::Reversed_Z;
 		}
@@ -620,7 +621,7 @@ namespace TKGEngine
 			{
 				VECTOR2 move_value = IInput::Get().GetMousePos() - push_pos;
 				move_value *= (CAMERA_SPEED_SLIDE);
-				m_position += ((move_value.x * -right) + (move_value.y * up));
+				m_position += ((move_value.x * right) + (move_value.y * up));
 				IInput::Get().SetMousePos(push_pos);
 			}
 		}
@@ -636,20 +637,11 @@ namespace TKGEngine
 				{
 					const VECTOR2 move_value = IInput::Get().GetMousePos() - push_pos;
 					VECTOR3 euler = m_rotation.ToEulerAngles();
-#ifdef AXIS_RH
-					euler.x += -move_value.y * CAMERA_SPEED_ROTATE_X;
-#else
 					euler.x += move_value.y * CAMERA_SPEED_ROTATE_X;
-#endif// #ifdef AXIS_RH
-					if (euler.x >= 89.0f)
-						euler.x = 89.0f;
-					else if (euler.x <= -89.0f)
-						euler.x = -89.0f;
-#ifdef AXIS_RH
+					euler.x = MyMath::Clamp(euler.x, -89.0f, 89.0f);
+
 					euler.y += -move_value.x * CAMERA_SPEED_ROTATE_Y;
-#else
-					euler.y += move_value.x * CAMERA_SPEED_ROTATE_Y;
-#endif// #ifdef AXIS_RH
+
 					euler.z = 0.0f;
 					m_rotation = Quaternion::EulerAngles(euler);
 				}
@@ -720,7 +712,7 @@ namespace TKGEngine
 							}
 						}
 						weight_da = MyMath::Clamp(weight_da, -1.0f, 1.0f);
-						m_position += right * CAMERA_SPEED_MOVE * delta_time * weight_da;
+						m_position -= right * CAMERA_SPEED_MOVE * delta_time * weight_da;
 					}
 					// W or S
 					if (!MyMath::Approximately(weight_ws, 0.0f))

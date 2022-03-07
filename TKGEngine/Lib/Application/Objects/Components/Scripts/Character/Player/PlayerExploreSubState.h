@@ -97,8 +97,8 @@ namespace TKGEngine
 
 		// 速度設定
 		float m_max_run_speed = 3.0f;	// 最大走り速度
-		float m_max_walk_speed = 1.5f;	// 最大歩き速度
-		float m_max_crouch_speed = 0.8f;	// 最大しゃがみ速度
+		float m_max_walk_speed = 1.6f;	// 最大歩き速度
+		float m_max_crouch_speed = 1.0f;	// 最大しゃがみ速度
 		float m_linear_run_acceleration = 6.0f;		// 走り加速度
 		float m_linear_walk_acceleration = 2.5f;	// 歩き加速度
 		float m_linear_crouch_acceleration = 1.5f;	// しゃがみ加速度
@@ -106,7 +106,7 @@ namespace TKGEngine
 		float m_sliding_threshold = 2.8f;	// スライディング可能閾値
 
 		// 振り向き設定
-		float m_angular_speed = 200.0f;	// 旋回角速度
+		float m_angular_speed = 400.0f;	// 旋回角速度
 		float m_angular_speed_on_move_begin = 200.0f;	// 移動開始時の旋回速度
 
 		// 乗り越え判定
@@ -120,8 +120,8 @@ namespace TKGEngine
 
 		// エイム状態
 		float m_max_aim_speed = 1.0f;	// 最大エイム時速度
-		float m_aim_acceleration = 3.0f;	// エイム時加速度
-		float m_aim_brake = 10.0f;	// エイム時減速加速度
+		float m_aim_acceleration = 2.0f;	// エイム時加速度
+		float m_aim_brake = 8.0f;	// エイム時減速加速度
 		float m_aim_angular_speed = 540.0f;	// エイム時回転速度
 		float m_aim_focus_distance = 20.0f;	// エイム注視点距離
 		VECTOR2 m_aim_current_forward = VECTOR2::Zero;	// エイム時の現在の体正面

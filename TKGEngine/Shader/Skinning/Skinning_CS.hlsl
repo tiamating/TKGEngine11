@@ -27,8 +27,10 @@ void Skinning(inout float3 pos, inout float3 norm, inout float3 tan, in uint4 bo
 		const matrix anim_mat = bone_transforms[bones[i]];
 		
 		position += mul(anim_mat, float4(pos.xyz, 1.0)) * weights[i];
-		normal += mul(norm.xyz, (float3x3) anim_mat) * weights[i];
-		tangent += mul(tan.xyz, (float3x3) anim_mat) * weights[i];
+		//normal += mul(norm.xyz, (float3x3) anim_mat) * weights[i];
+		//tangent += mul(tan.xyz, (float3x3) anim_mat) * weights[i];
+		normal += mul((float3x3) anim_mat, norm.xyz) * weights[i];
+		tangent += mul((float3x3) anim_mat, tan.xyz) * weights[i];
 	}
 	pos.xyz = position.xyz;
 	norm.xyz = normal.xyz;

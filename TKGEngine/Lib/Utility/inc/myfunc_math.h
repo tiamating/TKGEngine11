@@ -62,13 +62,17 @@ namespace TKGEngine
 		// ---------------------------------------------------
 		// 戻り値	:	0以上の値
 		//====================================================
-		static float Abs(float v)
+		static constexpr float Abs(float v)
 		{
-			return std::fabsf(v);
+			return v > 0 ? v : -v;
 		}
-		static int Abs(int v)
+		static constexpr double Abs(double v)
 		{
-			return std::abs(v);
+			return v > 0 ? v : -v;
+		}
+		static constexpr int Abs(int v)
+		{
+			return v > 0 ? v : -v;
 		}
 
 		// ===================================================
@@ -78,7 +82,7 @@ namespace TKGEngine
 		// ---------------------------------------------------
 		// 戻り値	:	正:1 負:-1 0:0
 		//====================================================
-		static float Sign(float value)
+		static constexpr float Sign(float value)
 		{
 			return static_cast<float>(value > 0.0f) - static_cast<float>(value < 0.0f);
 		}
@@ -193,7 +197,7 @@ namespace TKGEngine
 		// ---------------------------------------------------
 		// 戻り値 float	:	除数の逆数
 		//====================================================
-		static float InvertDivisionValue(const float value)
+		static constexpr float InvertDivisionValue(const float value)
 		{
 			float sign_value = Sign(value);
 			sign_value = sign_value * sign_value;
@@ -211,22 +215,22 @@ namespace TKGEngine
 		// ---------------------------------------------------
 		// 戻り値 bool	:	equal->true , not equal->false
 		//====================================================
-		static bool Approximately(float value, float reference, float max_abs_diff = FLT_EPSILON, float max_rel_diff = 0.0001f)
+		static constexpr bool Approximately(float value, float reference, float max_abs_diff = FLT_EPSILON, float max_rel_diff = 0.0001f)
 		{
-			if (fabsf(value - reference) > max_abs_diff)
+			if (Abs(value - reference) > max_abs_diff)
 			{
-				if (fabsf(value - reference) > (max_rel_diff * reference))
+				if (Abs(value - reference) > (max_rel_diff * reference))
 				{
 					return false;
 				}
 			}
 			return true;
 		}
-		static bool Approximately(double value, double reference, double max_abs_diff = DBL_EPSILON, double max_rel_diff = 0.0001)
+		static constexpr bool Approximately(double value, double reference, double max_abs_diff = DBL_EPSILON, double max_rel_diff = 0.0001)
 		{
-			if (::abs(value - reference) > max_abs_diff)
+			if (Abs(value - reference) > max_abs_diff)
 			{
-				if (::abs(value - reference) / reference > max_rel_diff)
+				if (Abs(value - reference) / reference > max_rel_diff)
 				{
 					return false;
 				}
@@ -242,11 +246,11 @@ namespace TKGEngine
 		// ---------------------------------------------------
 		// 戻り値 int	:	(v1 > v2)1、(v1 < v2)-1、(v1 == v2)0
 		//====================================================
-		static int CompareDecimal(float v1, float v2)
+		static constexpr int CompareDecimal(float v1, float v2)
 		{
 			return Approximately(v1, v2) ? 0 : (v1 > v2 ? 1 : -1);
 		}
-		static int CompareDecimal(double v1, double v2)
+		static constexpr int CompareDecimal(double v1, double v2)
 		{
 			return Approximately(v1, v2) ? 0 : (v1 > v2 ? 1 : -1);
 		}
@@ -280,7 +284,7 @@ namespace TKGEngine
 		//------------------------------------------------------
 		//  戻り値	:	vをloからhiまでの範囲でラップアラウンドさせた数値
 		//====================================================
-		static int Wrap(const int v, const int lo, const int hi)
+		static constexpr int Wrap(const int v, const int lo, const int hi)
 		{
 			assert(hi > lo && "wrap func is low <= high");
 			const int n = (v - lo) % (hi - lo); // 負数の剰余はc++11から使用可になった
